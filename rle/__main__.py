@@ -1,6 +1,7 @@
 import argparse
 from pathlib import Path
 
+from ._version import __version__
 from .encoding import run_length_decoder, run_length_encoder
 from .utils import open_byte_file, print_bytes, save_byte_file
 
@@ -26,6 +27,12 @@ def _init_argparse() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "-o", "--outfile", default=None, help="Filename to save output to"
+    )
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="version",
+        version="%(prog)s " + __version__,
     )
 
     return parser

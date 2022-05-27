@@ -24,7 +24,7 @@ def rle_compressed_data():
 
 
 def test_version():
-    assert rle.__version__ == "0.1.0"
+    assert rle.__version__ == "0.1.1"
 
 
 def test_run_length_encoder(uncompressed_data, rle_compressed_data):
