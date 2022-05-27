@@ -46,4 +46,5 @@ optional arguments:
   -d, --decode          Operate in decoder mode
   -o OUTFILE, --outfile OUTFILE
                         Filename to save output to
+  -V, --version         show program's version number and exit
 ```
