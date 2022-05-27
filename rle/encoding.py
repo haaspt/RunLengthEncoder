@@ -1,3 +1,6 @@
+from warnings import warn
+
+
 def run_length_encoder(in_bytes: bytes) -> bytes:
     """Compress a series of bytes using run-length-encoding (RLE)
 
@@ -35,7 +38,20 @@ def run_length_encoder(in_bytes: bytes) -> bytes:
             length += 1
 
     compress_bytes = bytes(run_length_array)
-    print(f"Saved {len(in_bytes)-len(compress_bytes)} in compression.")
+
+    compressed_byte_length = len(compress_bytes)
+    original_byte_length = len(in_bytes)
+
+    # In some circumstances compressed data can exceed original data length.
+    # If this is the case the user is warned.
+    if compressed_byte_length > original_byte_length:
+        warn(
+            "data size is larger after compression "
+            f"({compressed_byte_length} vs. {original_byte_length} bytes). "
+            "Consider alternate compression scheme.",
+            UserWarning,
+        )
+    print(f"Saved {original_byte_length-compressed_byte_length} bytes in compression.")
     return compress_bytes
 
 
