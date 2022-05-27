@@ -12,7 +12,7 @@ RLE encoded:
 4021102240 -> 4*'0', 2*'1', 1*'0', 2*'2', 4*'0'
 ```
 
-Compression can be very signifiant for very repetivive tile data.
+Compression can be very significant for very repetitive tile data.
 
 ## Install
 
