@@ -34,6 +34,11 @@ def test_run_length_encoder(uncompressed_data, rle_compressed_data):
         test_dat[-1] == 0
     ), f"Final byte of RLE encoded data should be 0, got {test_dat[-1]}"
 
+    # Test that a warning if produced if compression increases data size.
+    short_bytes = bytes([0, 1, 2, 3, 4])
+    with pytest.warns(UserWarning):
+        rle.run_length_encoder(short_bytes)
+
 
 def test_run_length_decoder(uncompressed_data, rle_compressed_data):
     test_dat = rle.run_length_decoder(rle_compressed_data)
