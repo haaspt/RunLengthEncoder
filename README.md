@@ -48,3 +48,14 @@ optional arguments:
                         Filename to save output to
   -V, --version         show program's version number and exit
 ```
+
+Example usage:
+
+```bash
+$ rle -V
+rle 0.1.1
+$ rle test.nam -o test_nam.rle
+Compressing 1024 bytes with run-length-encoding...
+Saved 937 bytes in compression.
+Wrote bytes to test_nam.rle.
+```
