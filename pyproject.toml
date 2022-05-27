@@ -17,6 +17,9 @@ mypy = "^0.960"
 ipython = "^8.3.0"
 pre-commit = "^2.19.0"
 
+[tool.mypy]
+ignore_missing_imports = true
+
 [tool.isort]
 multi_line_output = 3
 include_trailing_comma = true
