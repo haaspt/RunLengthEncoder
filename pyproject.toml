@@ -4,6 +4,9 @@ version = "0.1.0"
 license = "MIT"
 description = ""
 authors = ["Patrick Tyler Haas <patrick.tyler.haas@gmail.com>"]
+packages = [
+    { include = "rle" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -30,6 +33,7 @@ line_length = 99
 
 [tool.poetry.scripts]
 rle = "rle.__main__:main"
+checks = "scripts.checks:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
